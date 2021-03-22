@@ -2,13 +2,10 @@ package com.pdh.git;
 
 /**
  * @author pdh
- * @create 2021-03-22-12:57
+ * @create 2021-03-22-13:09
  */
 public class HelloGit {
     public static void main(String[] args) {
-        System.out.println("hello git");
-        System.out.println("更新1");
-        System.out.println("更新2");
-        System.out.println("创建分支");
+        System.out.println("添加文件");
     }
 }
