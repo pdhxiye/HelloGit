@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdh.dao.CompetitionMapper">
+
+    <insert id="addCompetition" parameterType="Competition">
+        insert into graduation.competition (competitionName,competitionPlace,competitionText)
+        values (#{competitionName},#{competitionPlace},#{competitionText});
+
+    </insert>
+    <delete id="deleteCompetition" parameterType="int">
+        delete from graduation.competition
+        where competitionId=#{competitionId};
+    </delete>
+    <update id="updateCompetition" parameterType="Competition">
+        update graduation.competition
+        set competitionName =#{competitionName},competitionPlace =#{competitionPlace},competitionText =#{competitionText}
+        where competitionId=#{competitionId};
+    </update>
+    <select id="queryCompetitionLikeName" resultType="com.pdh.pojo.Competition">
+        select *
+       from graduation.competition where competitionName like #{competitionName}"%";
+    </select>
+   <select id="queryCompetitionById" resultType="Competition">
+       select *
+       from graduation.competition where competitionId=#{competitionId};
+   </select>
+
+    <select id="queryCompetitionByName" resultType="Competition">
+        select *
+        from graduation.competition where competitionName=#{competitionName};
+    </select>
+    <select id="queryAllCompetition" resultType="Competition">
+        select * from graduation.competition;
+    </select>
+
+</mapper>

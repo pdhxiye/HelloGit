@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdh.dao.ContestantMapper">
+
+    <insert id="addContestant" parameterType="ContestantUser">
+        insert into graduation.contestantUser (contestantName,contestantGrade,competitionId,studentId)
+         values (#{contestantName},#{contestantGrade},#{competitionId},#{studentId});
+    </insert>
+
+    <delete id="deleteContestant">
+        delete from graduation.contestantuser
+        where contestantName=#{competitionName};
+    </delete>
+
+    <select id="queryContestantUser" resultType="ContestantUser">
+        select * from graduation.contestantuser where competitionId=#{competitionId};
+    </select>
+    <select id="queryContestant" resultType="ContestantUser">
+       select * from graduation.contestantuser
+        where competitionId=#{competitionId}
+    </select>
+
+</mapper>

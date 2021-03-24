@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+}
+.right{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+.left{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
